@@ -1,0 +1,5 @@
+weight, height = map(float, input("введиет свой вес(кг) и рост(м) ").split())
+
+body_mass_index = weight / (height * height)
+
+print(f"Ваш ИМТ: {body_mass_index:.1f}")
