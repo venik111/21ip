@@ -1,0 +1,32 @@
+B5000 = 5000
+B2000 = 2000
+B1000 = 1000
+B500 = 500
+B200 = 200
+B100 = 100
+
+def withdraw(amount):
+ 
+    nominals = [B5000, B2000, B1000, B500, B200, B100]
+    result = []
+
+    for nominal in nominals:
+        count = amount // nominal
+        if count > 0:
+            result.append((nominal, count))
+            amount -= count * nominal
+    return result
+
+amount = int(input("Введите сумму для снятия кратную 100: "))
+
+if amount <= 0 or amount % 100 != 0:
+    print("Ошибка: сумма должна быть положительным числом, кратным 100.")
+else:
+    print(f"Выдача суммы {amount} руб.:")
+
+    total_notes = 0
+    for nominal, count in withdraw(amount):
+        print(f"{nominal:>5} руб. × {count} = {nominal * count} руб.")
+        total_notes += count
+
+    print(f"Всего купюр: {total_notes}")
