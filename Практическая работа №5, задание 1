@@ -1,0 +1,11 @@
+dohod = float(input("введите свой годовой доход "))
+
+NALOG = 0.13
+
+summa_nalolga = dohod * NALOG
+
+summa_na_ruki = dohod - summa_nalolga
+
+print(f"общая сумма дохода {dohod:,.2f} руб.")
+print(f"Сумма рассчитанного налога {summa_nalolga:,.2f} руб.")
+print(f"Сумма «на руки» после вычета налога {summa_na_ruki:,.2f} руб.")
